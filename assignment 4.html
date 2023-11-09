@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Rock Paper scissors</title>
+        <script>
+            var a = Math.floor(Math.random()*3)
+            var playerwins = 0
+            var computerWins = 0 
+        
+            function Picture() {
+                document.getElementById("userPicture").src = "scissors.jpeg";
+                a= Math.floor(Math.random()*3);
+                if(a==2) {
+                document.getElementById("comPicture").src = "scissors.jpeg";
+                document.getElementById("Win").style = "color:#000080;";
+                document.getElementById("Win").innerHTML = "It's a tie";
+            }
+            if(a==0) {
+                document.getElementById("comPicture").src = "paper.jpg";
+                document.getElementById("Win").style = "color:#008000;";
+                document.getElementById("Win").innerHTML = "You have won";
+                playerwins = playerwins + 1 
+            }
+            if(a==1) {
+                document.getElementById("comPicture").src = "rock.jpg";
+                document.getElementById("Win").style = "color:#ff0000;";
+                document.getElementById("Win").innerHTML = "You have lost";
+                document.getElementById("lose").innerHTML = "Number of wins of computer wins " + computerWins;
+                computerWins = computerWins + 1
+            }
+            document.getElementById("wins").innerHTML = "Number of wins of user wins " + playerwins;
+            }
+            function Pic() {
+                document.getElementById("userPicture").src = "paper.jpg";
+                a= Math.floor(Math.random()*3);
+                if(a==2) {
+                document.getElementById("comPicture").src = "scissors.jpeg";
+                document.getElementById("Win").style = "color:#ff0000;";
+                document.getElementById("Win").innerHTML = "You have lost";
+                document.getElementById("lose").innerHTML = "Number of wins of computer wins " + computerWins;
+                computerWins = computerWins + 1 
+            }
+            if(a==0) {
+                document.getElementById("comPicture").src = "paper.jpg";
+                document.getElementById("Win").style = "color:#000080;";
+                document.getElementById("Win").innerHTML = "It's a tie";
+            }
+            if(a==1) {
+                document.getElementById("comPicture").src = "rock.jpg";
+                document.getElementById("Win").style = "color:#008000;";
+                document.getElementById("Win").innerHTML = "You have won";
+                playerwins = playerwins + 1 
+                document.getElementById("wins").innerHTML = "Number of wins of user wins " + playerwins;
+            }
+            
+            }
+            function rock() {
+            document.getElementById("userPicture").src = "rock.jpg";
+            a= Math.floor(Math.random()*3);
+            if(a==2) {
+                document.getElementById("comPicture").src = "scissors.jpeg";
+                document.getElementById("Win").style = "color:#008000;";
+                document.getElementById("Win").innerHTML = "You have won";
+                playerwins = playerwins + 1 
+            }
+            if(a==0) {
+                document.getElementById("comPicture").src = "paper.jpg";
+                document.getElementById("Win").style = "color:#ff0000;";
+                document.getElementById("Win").innerHTML = "You have lost";
+                document.getElementById("lose").innerHTML = "Number of wins of computer wins " + computerWins;
+                computerWins = computerWins + 1
+            }
+            if(a==1) {
+                document.getElementById("comPicture").src = "rock.jpg";
+                document.getElementById("Win").style = "color:#000080;";
+                document.getElementById("Win").innerHTML = "It's a tie";
+            }
+            document.getElementById("wins").innerHTML = "Number of wins of user wins " + playerwins;
+            }
+   
+    
+
+             
+            
+        </script>
+    </head>
+ <body style="background-color: gray;"></body>
+    <center>
+        <h1>Rock Paper scissors</h1>
+   
+       
+    <img src="rules.jpg" width="50%" height="50%">
+</center>
+
+<p id="Win"></p>
+<div>
+    <img width="30%" height="30%" id="userPicture"><img align="right" width="30%" height="30%" id="comPicture">
+</div>
+<div>
+    <button height="80" width="80" id="userPictures" onclick="Picture();"><h1>Scissors</h1></button> <button id="userGuess" onclick="Pic();"><h1>Paper</h1></button><button id="UserRock" onclick="rock();"><h1>Rock</h1></button>
+</div>
+<p style="color:rgb(43, 255, 0)" id="wins"></p>
+<p style="color: rgba(144, 255, 18, 0.795);" id="lose"></p>
+</body>
+</html>
